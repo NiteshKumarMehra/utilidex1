@@ -21,10 +21,10 @@ await page1.waitForTimeout(15000);
 
 
 
-await page1.goto('https://energyqapaas.azurewebsites.t/ForecastCurve/ForecastCurve')
+await page1.goto('https://energyqapaas.azurewebsites.net/ForecastCurve/ForecastCurve')
 await page1.waitForTimeout(5000);
-//const title = page.locator('form-control form-control-sm');
-  //await expect(title).toHaveText('search');
+const title = page.locator('form-control form-control-sm');
+  await expect(title).toHaveText('search');
 //await page.click('#Company')
 //const url = await page.url()
 //expext(url).toContain('Company')
