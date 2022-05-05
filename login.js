@@ -1,7 +1,7 @@
 const {chromium} = require('playwright');
 const expect = require('expect');
 
-async() => {
+(async() => {
 const browser = await chromium.launch({headless:false, slowMo: 50})  
 const context = await browser.newContext()
 const page = await context.newPage()
@@ -10,32 +10,26 @@ await page.goto('https://utilidexalpha.b2clogin.com/utilidexalpha.onmicrosoft.co
 
 await page.fill('input[type = "email"]', 'manith09@aol.com')
 await page.press('input[type = "email"]','Tab')
-await page.type('input[type = "password"]', 'Aug@2022',{delay :300})
+await page.type('input[type = "password"]', 'Aug@2022',{delay : 500})
 
 await page.check('#rememberMe')
 const signIn = await page.$('#next')
 await signIn.click()
 
 const page1 = await context.newPage()
-await page1.waitForTimeout(30000);
-
-await page.mouse.move(10,10);
-
-await page.locator('#menuContainer')
-
-const menu = await page.$('"sub_text"')
-await menu.click()
-
-await page1.goto('https://energyqapaas.azurewebsites.net/ForecastCurve/ForecastCurve')
-await page1.waitForTimeout(30000);
-
-//const SiteData = await page1.$('#SiteData')
- //await SiteData.click()
-    // Opens popup.
-  //  await  page.$('#SiteData').click()
+await page1.waitForTimeout(15000);
 
 
-//await page.waitForTimeout(3000)
+
+await page1.goto('https://energyqapaas.azurewebsites.t/ForecastCurve/ForecastCurve')
+await page1.waitForTimeout(5000);
+//const title = page.locator('form-control form-control-sm');
+  //await expect(title).toHaveText('search');
+//await page.click('#Company')
+//const url = await page.url()
+//expext(url).toContain('Company')
+
+await page.waitForTimeout(5000)
 
 //await page.goBack()
 //await page.waitForTimeout(2000)
